@@ -1,0 +1,8 @@
+PRODUCT_BIBLE.md
+package-lock.json
+node_modules/
+coverage/
+dist/
+build/
+nightwater-phase0.*
+docs/PROGRESS.md
