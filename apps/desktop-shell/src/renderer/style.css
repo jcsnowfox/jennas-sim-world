@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  font-family: system-ui;
+  background: #07171f;
+  color: #f7f3ea;
+}
+main {
+  max-width: 860px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border: 1px solid #2d5363;
+  border-radius: 18px;
+  background: #0d2530;
+}
+button {
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  border: 0;
+  background: #d7b46a;
+  color: #09141a;
+  font-weight: 700;
+}
+strong {
+  text-transform: capitalize;
+  color: #9ee6c9;
+}
+li {
+  margin: 0.75rem 0;
+}

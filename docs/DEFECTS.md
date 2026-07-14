@@ -67,3 +67,13 @@ Defect IDs use NIGHTWATER-CRITICAL-###, NIGHTWATER-HIGH-###, NIGHTWATER-MEDIUM-#
 - Repair: This file now records each confirmed defect, severity, status, affected files, evidence, impact, repair, regression test and final verification.
 - Regression test: `npm run docs:lint` and `npm run phase0:validate` require the defect log to remain present and well-formed as a required document.
 - Final verification: `npm run docs:lint`, `npm run docs:validate`, and `npm run phase0:validate` pass.
+
+## NIGHTWATER-MEDIUM-004
+
+- Severity: MEDIUM
+- Status: RESOLVED IN PHASE 1 IMPLEMENTATION; pending CI verification.
+- Affected files: `packages/local-api/src/server.ts`, `apps/desktop-shell/src/main/supervisor.ts`
+- Evidence: Phase 0 had no runtime Local API and therefore no authenticated health endpoint.
+- Impact: Phase 1 could not honestly report process health.
+- Repair: Added a loopback-only authenticated Local API child process and main-process health polling with sanitized renderer output.
+- Regression test: `npm run test:phase1` includes authenticated, missing-auth and wrong-auth health checks.

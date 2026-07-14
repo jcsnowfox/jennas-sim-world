@@ -1,49 +1,47 @@
 {
   "name": "somewhere-ours-private-city",
-  "version": "0.0.0-phase-0",
+  "version": "0.1.0-phase-1",
   "private": true,
-  "description": "Project Nightwater / Somewhere Ours: Private City Phase 0 repository baseline.",
+  "description": "Project Nightwater / Somewhere Ours: Private City Phase 1 desktop shell.",
   "license": "UNLICENSED",
   "type": "module",
   "packageManager": "npm@11.4.2",
   "engines": {
-    "node": "24.15.0",
-    "npm": "11.4.2"
+    "node": ">=20.19.0",
+    "npm": ">=10.0.0"
   },
   "workspaces": [
     "apps/*",
     "packages/*",
     "adapters/*"
   ],
-  "nightwaterToolchain": {
-    "node": "24.15.0",
-    "packageManager": "npm@11.4.2",
-    "workspaceSystem": "npm workspaces@11.4.2",
-    "typescript": "5.9.3",
-    "electron": "39.2.7",
-    "babylonjs": "@babylonjs/core@8.38.0",
-    "unitIntegrationTestRunner": "vitest@4.0.16",
-    "browserElectronE2ERunner": "playwright@1.57.0",
-    "postgresMigrationTooling": "node-pg-migrate@8.0.3",
-    "formatter": "prettier@3.7.3",
-    "linter": "eslint@9.39.2"
-  },
+  "main": "apps/desktop-shell/dist/main/main.js",
   "scripts": {
+    "dev": "npm run build && electron .",
+    "start": "npm run build && electron .",
+    "build": "tsc -p tsconfig.phase1.json && node scripts/copy-renderer-assets.mjs",
     "format:check": "prettier --check .",
     "lint": "eslint scripts/**/*.mjs eslint.config.js",
-    "typecheck": "tsc -p tsconfig.scripts.json --noEmit",
+    "typecheck": "tsc -p tsconfig.phase1.json --noEmit",
     "docs:lint": "node scripts/lint-docs.mjs",
     "docs:validate": "node scripts/validate-docs.mjs",
     "boundaries:validate": "node scripts/validate-boundaries.mjs",
     "bible:verify": "node scripts/verify-product-bible.mjs",
     "phase0:validate": "node scripts/validate-phase0.mjs",
     "test:phase0": "node scripts/test-phase0.mjs",
-    "check": "npm run format:check && npm run lint && npm run typecheck && npm run docs:lint && npm run docs:validate && npm run boundaries:validate && npm run bible:verify && npm run phase0:validate && npm run test:phase0"
+    "test": "vitest run",
+    "test:phase1": "npm run build && vitest run tests/phase1",
+    "package": "npm run build && electron-builder --dir --config electron-builder.config.cjs",
+    "package:smoke": "npm run package && node scripts/run-packaged-smoke.mjs",
+    "check": "npm run format:check && npm run lint && npm run typecheck && npm run docs:lint && npm run docs:validate && npm run boundaries:validate && npm run bible:verify && npm run phase0:validate && npm run test:phase0 && npm run test:phase1"
   },
   "devDependencies": {
     "@types/node": "24.10.1",
+    "electron": "39.2.7",
+    "electron-builder": "26.0.12",
     "eslint": "9.39.2",
     "prettier": "3.7.3",
-    "typescript": "5.9.3"
+    "typescript": "5.9.3",
+    "vitest": "4.0.16"
   }
 }

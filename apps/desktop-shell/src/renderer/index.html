@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>Somewhere Ours: Private City</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Somewhere Ours: Private City</h1>
+      <p id="meta">Phase 1 desktop shell starting…</p>
+      <section aria-labelledby="health-title">
+        <h2 id="health-title">Local process health</h2>
+        <p>System: <strong id="system">Starting</strong></p>
+        <ul>
+          <li>Local API: <strong id="api">Starting</strong> <span id="api-detail"></span></li>
+          <li>Worker: <strong id="worker">Starting</strong> <span id="worker-detail"></span></li>
+        </ul>
+        <button id="retry" type="button">Retry Health Check</button>
+      </section>
+    </main>
+    <script type="module" src="renderer.js"></script>
+  </body>
+</html>

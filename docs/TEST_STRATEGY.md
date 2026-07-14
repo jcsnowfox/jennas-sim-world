@@ -18,3 +18,9 @@
 ## Phase 0 checks
 
 The root scripts implement real checks for documentation presence, internal links, repository-map accuracy, phase weights totalling exactly 100%, required package boundaries, proprietary licence resolution, product-bible hash integrity, forbidden local paths, obvious secret patterns, and inappropriate committed binaries.
+
+## Phase 1 implemented test layers
+
+- `npm run test:phase1` builds the TypeScript application and runs Vitest coverage for protocol path validation, Local API authentication, Worker heartbeat/crash handling, process supervision and renderer/preload security scans.
+- `npm run package:smoke` builds an Electron Builder unpacked package and launches the packaged application in `--smoke-test` mode. The smoke test exits zero only after the packaged main process, renderer startup path, Local API and Worker reach ready health.
+- The Phase 1 GitHub Actions workflow runs `npm ci`, `npm run check`, `npm run test:phase1`, `npm run build`, Linux Electron launch under `xvfb-run`, and Windows unpacked package smoke testing.
