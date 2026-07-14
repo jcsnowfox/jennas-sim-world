@@ -45,3 +45,13 @@ Visible history: `74c8d5d Add files via upload`; `9d5b018 Initialize repository`
 - `adapters/voice` — documented voice provider boundary only.
 - `packages/portable-vault` — documented vault boundary only.
 - `packages/synchronisation-engine` — documented sync engine boundary only.
+
+## Phase 1 implementation files
+
+- `apps/desktop-shell/src/main/`: Electron main process, custom protocol resolver and typed process supervisor.
+- `apps/desktop-shell/src/preload/`: narrow `window.nightwater` preload bridge.
+- `apps/desktop-shell/src/renderer/`: accessible Phase 1 health shell loaded through `nightwater://app/`.
+- `packages/local-api/src/`: authenticated loopback health service child process.
+- `packages/worker/src/`: IPC heartbeat worker child process.
+- `packages/shared-contracts/src/`: Phase 1 TypeScript contracts shared by main, preload and renderer.
+- `tests/phase1/`: Phase 1 protocol, process, supervisor and security tests.

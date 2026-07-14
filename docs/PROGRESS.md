@@ -130,3 +130,9 @@ Progress is earned only when the phase gate passes. Existing files, interfaces o
 - Merge status: pending PR review.
 - Current defects: NIGHTWATER-HIGH-001, NIGHTWATER-HIGH-002, NIGHTWATER-HIGH-003, NIGHTWATER-MEDIUM-001, NIGHTWATER-MEDIUM-002, and NIGHTWATER-MEDIUM-003 are RESOLVED AND REVERIFIED in `docs/DEFECTS.md`.
 - Next phase: Phase 1, Desktop shell and process architecture, must not start until Phase 0 is accepted.
+
+# Phase 1 Current Status
+
+- Phase 1 status: IMPLEMENTED LOCALLY AND PROPOSED FOR REVIEWER ACCEPTANCE; not marked complete inside the repository.
+- Proposed cumulative percentage remains 3% unless every Phase 1 gate is accepted by review and CI.
+- Scope statement: this update implements only the desktop shell and process architecture gate; no Phase 2 persistence, AI, gameplay, media, sync, Touch or city-lot work has started.

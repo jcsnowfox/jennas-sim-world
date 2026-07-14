@@ -39,3 +39,10 @@ Ghostlight is an optional adapter boundary. It must never become a required depe
 ## ADR-0005: No fake implementation
 
 Phase 0 creates documentation, boundary folders, validation scripts, and package metadata only. Empty boundaries contain README contracts and no pretend implementation code.
+
+## Phase 1 desktop shell decisions
+
+- Electron is the single desktop runtime for Phase 1. The main process owns window creation, local child-process supervision, health polling and application shutdown.
+- Electron Builder is the only packaging system for Phase 1, producing unpacked packages for launch and smoke testing. Signing is intentionally deferred to Phase 14.
+- Renderer assets are served by the privileged `nightwater://app/` protocol. Production startup does not use an unrestricted `file://` renderer entry point.
+- The Local API and Worker are separate Node child processes spawned without shell execution. The Local API receives a per-launch random bearer token that is not sent to the renderer.

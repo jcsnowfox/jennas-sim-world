@@ -13,3 +13,6 @@ Thumbs.db
 .vscode/
 .idea/
 nightwater-phase0.*
+
+dist-ts/
+release/
