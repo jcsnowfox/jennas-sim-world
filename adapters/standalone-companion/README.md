@@ -1,13 +1,13 @@
-# Standalone adapter
+# Standalone companion adapter
 
-Purpose: Defines the optional local companion integration boundary.
+Purpose: Local Ollama-backed companion brain boundary, model checks, memory retrieval integration, and explicit failure handling.
 
-Responsibilities: Local model routing, memory retrieval, capability checks, and clear failure reporting.
+Responsibilities: Local Ollama-backed companion brain boundary, model checks, memory retrieval integration, and explicit failure handling.
 
-Permitted dependencies: shared contracts and local API interfaces.
+Permitted dependencies: shared contracts, local API adapter interfaces.
 
-Forbidden dependencies: game mechanics authority, renderer internals, and Ghostlight-only assumptions.
+Forbidden dependencies: world mechanics authority, renderer credentials, Ghostlight-only identity assumptions.
 
 Implementation phase: Phase 3.
 
-Current status: Documentation only; no runtime implementation.
+Current status: Documented boundary only; no Ollama implementation.
