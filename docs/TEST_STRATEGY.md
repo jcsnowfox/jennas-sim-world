@@ -4,7 +4,7 @@
 
 - Pure simulation unit tests for time, needs, utility scoring, actions, reservations, and deterministic state.
 - Persistence integration tests for PostgreSQL, migrations, pgvector-compatible retrieval, rebuilds, and recovery.
-- Electron security tests for renderer isolation, preload bridge, protocol safety, and credential exposure prevention.
+- Electron security tests for renderer isolation, preload bridge, protocol safety, and renderer secret exposure.
 - Babylon browser tests for canvas lifecycle, camera, picking, route cleanup, and resource leaks.
 - Worker tests for offline reconciliation, scheduling, restart, and bounded catch-up.
 - Home Cinema tests for media privacy, subtitles, transcripts, frames, spoiler windows, commentary timing, and watch memories.
@@ -13,7 +13,7 @@
 - Ghostlight adapter contract tests for scopes, idempotency, conflicts, offline queue, and optional availability.
 - Offline tests with network disabled.
 - Sync conflict tests for settings, events, and world layout revisions.
-- Security and tenant-isolation tests for cross-owner access, unsafe paths, invalid identifiers, replay protection, manifest validation, and rate limits.
+- Security and tenant-isolation tests for IDOR, path traversal, forged IDs, replay, malicious manifests, and rate limits.
 
 ## Phase 0 checks
 

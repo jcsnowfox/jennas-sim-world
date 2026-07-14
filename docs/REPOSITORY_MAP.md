@@ -39,7 +39,7 @@ Visible history: `74c8d5d Add files via upload`; `9d5b018 Initialize repository`
 - `packages/worker` — documented worker boundary only.
 - `packages/shared-contracts` — documented shared contracts boundary only.
 - `packages/persistence` — documented persistence boundary only.
-- `adapters/standalone-companion` — documented local standalone companion boundary only.
+- `adapters/standalone-companion` — documented local companion adapter boundary only.
 - `adapters/ghostlight` — documented optional Ghostlight boundary only.
 - `adapters/cinema-engine` — documented cinema boundary only.
 - `adapters/voice` — documented voice provider boundary only.
